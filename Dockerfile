@@ -1,6 +1,8 @@
-FROM nginx:stable-alpine
+FROM nginx:1.10.1-alpine
 
 MAINTAINER Maxim Zalysin <zalysin.m@gmail.com>
+
+LABEL pro.magnaz.docker.nginx-acme.version="{\"container\": \"1.1\", \"nginx\": \"1.10.1-alpine\"}"
 
 RUN apk add --no-cache openssl curl && \
     curl https://get.acme.sh | LE_WORKING_DIR=/opt/acme.sh sh && \
