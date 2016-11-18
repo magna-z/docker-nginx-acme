@@ -2,7 +2,7 @@ FROM nginx:1.10.2-alpine
 
 MAINTAINER Maxim Zalysin <zalysin.m@gmail.com>
 
-LABEL pro.magnaz.docker.nginx-acme.version="{\"container\": \"1.4\", \"nginx\": \"1.10.2-alpine\", \"acme.sh\": \"2.6.0\"}"
+LABEL pro.magnaz.docker.nginx-acme.version="{\"container\": \"16.11.18\", \"nginx\": \"1.10.2-alpine\", \"acme.sh\": \"master\"}"
 
 COPY docker-entrypoint.sh /
 
