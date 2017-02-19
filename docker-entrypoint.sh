@@ -3,7 +3,7 @@
 set -e
 
 # Start Cron in background
-crond
+crond -b -L /var/log/crond.log
 
 # Start Nginx in foreground
 nginx -g "daemon off;"
