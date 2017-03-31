@@ -7,10 +7,6 @@ Nginx with embedded Let's Encrypt client ACME.sh
 
 After the initial issue of the certificate, its updating is automated by cron in container!
 
-Official sites: 
-Nginx: https://nginx.org
-ACME.sh: https://acme.sh
-
 
 #### Supported tags and respective Dockerfile links:
 
@@ -51,7 +47,7 @@ ACME.sh: https://acme.sh
     sudo docker run \
     --name nginx \
     --hostname nginx \
-    --network nginx
+    --network nginx \
     -p 80:80 \
     -p 443:443 \
     -e ACCOUNT_CONF_PATH=/etc/nginx/ssl/acme.sh.conf \
