@@ -1,0 +1,27 @@
+server {
+  listen 80;
+  server_name example.com;
+
+  location /.well-known {
+    root /var/www/example.com;
+  }
+
+  # return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl http2;
+  server_name example.com;
+
+  location /.well-known {
+    root /var/www/example.com;
+  }
+
+  ssl_certificate ssl/example.com/fullchain.cer;
+  ssl_certificate_key ssl/example.com/example.com.key;
+  include ssl/ssl.conf;
+
+  location / {
+    proxy_pass http://example:80;
+  }
+}
