@@ -10,10 +10,12 @@ After the initial issue of the certificate, its updating is automated by cron in
 
 #### Supported tags:
 
-- **1.10-alpine** or **latest** ([1.10-alpine/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.10-alpine/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.10-alpine.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.10-alpine "Get your own image badge on microbadger.com")
+- **1.12-alpine** or **latest** ([1.12-alpine/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.12-alpine/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.12-alpine.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.12-alpine "Get your own image badge on microbadger.com")
 - **1.11-alpine** ([1.11-alpine/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.11-alpine/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.11-alpine.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.11-alpine "Get your own image badge on microbadger.com")
-- **1.10-debian** ([1.10-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.10-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.10-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.10-debian "Get your own image badge on microbadger.com")
+- **1.10-alpine** ([1.10-alpine/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.10-alpine/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.10-alpine.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.10-alpine "Get your own image badge on microbadger.com")
+- **1.12-debian** ([1.12-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.12-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.12-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.12-debian "Get your own image badge on microbadger.com")
 - **1.11-debian** ([1.11-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.11-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.11-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.11-debian "Get your own image badge on microbadger.com")
+- **1.10-debian** ([1.10-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.10-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.10-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.10-debian "Get your own image badge on microbadger.com")
 
 
 #### Container create short manual:
@@ -58,7 +60,7 @@ After the initial issue of the certificate, its updating is automated by cron in
     -v /var/docker/nginx/logs:/var/log/nginx:rw \
     -v /var/docker/nginx/www:/var/www:rw \
     -d --restart always \
-    magnaz/nginx-acme:1.10-alpine
+    magnaz/nginx-acme:1.12-alpine
     ```
 
 1. **Initial issue "Let's Encrypt" certificate:**

@@ -1,6 +1,7 @@
 FROM nginx:1.11
 
-ENV LE_WORKING_DIR=/opt/acme.sh
+ENV DEBIAN_FRONTEND=noninteractive \
+    LE_WORKING_DIR=/opt/acme.sh
 
 COPY docker-entrypoint.sh /
 

@@ -1,4 +1,4 @@
-FROM nginx:1.10
+FROM nginx:1.12
 
 ENV DEBIAN_FRONTEND=noninteractive \
     LE_WORKING_DIR=/opt/acme.sh
