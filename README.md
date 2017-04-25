@@ -13,38 +13,33 @@ After the initial issue of the certificate, its updating is automated by cron in
  - **1.13-debian** ([1.13-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.13-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.13-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.13-debian "Get your own image badge on microbadger.com")
 
 Old releases:
+
  - 1.10-alpine ([1.10-alpine/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.10-alpine/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.10-alpine.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.10-alpine "Get your own image badge on microbadger.com")
  - 1.10-debian ([1.10-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.10-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.10-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.10-debian "Get your own image badge on microbadger.com")
  - 1.11-alpine ([1.11-alpine/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.11-alpine/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.11-alpine.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.11-alpine "Get your own image badge on microbadger.com")
  - 1.11-debian ([1.11-debian/Dockerfile](https://github.com/magna-z/docker-nginx-acme/blob/master/1.11-debian/Dockerfile)) [![](https://images.microbadger.com/badges/image/magnaz/nginx-acme:1.11-debian.svg)](https://microbadger.com/images/magnaz/nginx-acme:1.11-debian "Get your own image badge on microbadger.com")
 
-
 #### Container create short manual:
 1. **Create directories for docker container volumes:**
-
     ```sh
     mkdir -p /var/docker/nginx/ssl /var/docker/nginx/conf.d
     ```
 
 1. **Generate a DH Parameter (Key) File (recommended 2048 bits):**
-
     ```sh
     openssl dhparam -out /var/docker/nginx/ssl/dhparam.pem 2048
     ```
 
 1. **Create configs for Nginx in /var/docker/nginx:**
-
     See the simple examples in [GitHub Repository](https://github.com/magna-z/docker-nginx-acme/tree/master/example-configs)
     and [Mozilla SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/).
 
-1. **Create user-defined network and docker container:**
-
+1. **Create user-defined network:**
     ```sh
     sudo docker network create nginx
     ```
 
-1. **Create user-network and docker container:**
-
+1. **Create docker container:**
     ```sh
     sudo docker run \
     --name nginx \
@@ -65,5 +60,8 @@ Old releases:
 
 1. **Initial issue "Let's Encrypt" certificate:**
     ```sh
-    sudo docker exec nginx acme.sh --issue -w /var/www/example.com -d example.com -d www.example.com
+    sudo docker exec nginx \
+    acme.sh --issue \
+    -w /var/www/example.com \
+    -d example.com -d www.example.com
     ```
